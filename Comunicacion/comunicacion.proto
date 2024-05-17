@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package comunicacion;
+
+option go_package = ".";
+
+// Importing Empty message from google protobuf
+import "google/protobuf/empty.proto";
+
+// Messages from Director to Jugador
+message ActNow {
+    bool act_now = 1; // Director tells the player when to act
+}
+
+message PlayerAlive {
+    bool player_alive = 1; // Director informs if the player is alive
+}
+
+// Messages from Jugador to Director
+
+// Message to send an int between 1, 2, and 3
+message OptionMessage {
+    int32 option = 1; // Sends an int between 1, 2, and 3
+}
+
+// Message to send a letter A or B
+message LetterMessage {
+    string letter = 1; // Sends a letter A or B
+}
+
+// Message to send a string of ints in the format 1,2,3,4,5
+message IntStringMessage {
+    string int_string = 1; // Sends a string of ints in the format 1,2,3,4,5
+}
+
+// Message to request money from Director to Jugador
+message MoneyRequest {
+    string name = 1; // Player's name
+    string message = 2;
+}
+
+// Response for money request from Director to Jugador
+message MoneyResponse {
+    int32 amount = 1;
+}
+
+// Service definition
+service ComunicacionService {
+    // Director to Jugador communication
+    rpc SendActNow(ActNow) returns (google.protobuf.Empty);
+    rpc SendPlayerAlive(PlayerAlive) returns (google.protobuf.Empty);
+
+    // Jugador to Director communication
+    rpc SendOptionMessage(OptionMessage) returns (google.protobuf.Empty);
+    rpc SendLetterMessage(LetterMessage) returns (google.protobuf.Empty);
+    rpc SendIntStringMessage(IntStringMessage) returns (google.protobuf.Empty);
+    rpc RequestMoney(MoneyRequest) returns (MoneyResponse);
+}
