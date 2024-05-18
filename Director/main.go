@@ -6,7 +6,7 @@ import (
     "net"
 
     "google.golang.org/grpc"
-    pb "path/to/your/project/Comunicacion" // Update this import path
+    pb "github.com/FelipeFernandezUSM/lab-4/Comunicacion" // Update this import path
     "google.golang.org/protobuf/types/known/emptypb"
 )
 
