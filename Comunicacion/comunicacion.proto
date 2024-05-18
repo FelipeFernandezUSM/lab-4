@@ -1,10 +1,9 @@
 syntax = "proto3";
 
-package Comunicacion;
+package comunicacion;
 
-option go_package = ".";
+option go_package = "github.com/your_username/your_project/comunicacion";
 
-// Importing Empty message from google protobuf
 import "google/protobuf/empty.proto";
 
 // Messages from Director to Jugador
@@ -44,8 +43,18 @@ message MoneyResponse {
     int32 amount = 1;
 }
 
-// Service definition
-service ComunicacionService {
+// Messages from Director to Doshbank
+message MoneyRequestToDoshbank {
+    string message = 1;
+}
+
+// Response for money request from Doshbank to Director
+message MoneyResponseFromDoshbank {
+    int32 amount = 1;
+}
+
+// Service definition for Jugador
+service JugadorService {
     // Director to Jugador communication
     rpc SendActNow(ActNow) returns (google.protobuf.Empty);
     rpc SendPlayerAlive(PlayerAlive) returns (google.protobuf.Empty);
@@ -55,4 +64,13 @@ service ComunicacionService {
     rpc SendLetterMessage(LetterMessage) returns (google.protobuf.Empty);
     rpc SendIntStringMessage(IntStringMessage) returns (google.protobuf.Empty);
     rpc RequestMoney(MoneyRequest) returns (MoneyResponse);
+
+    // Director to Doshbank communication
+    rpc RequestMoneyFromDoshbank(MoneyRequestToDoshbank) returns (MoneyResponseFromDoshbank);
+}
+
+// Service definition for Doshbank
+service DoshbankService {
+    // Director to Doshbank communication
+    rpc RequestMoney(MoneyRequestToDoshbank) returns (MoneyResponseFromDoshbank);
 }
