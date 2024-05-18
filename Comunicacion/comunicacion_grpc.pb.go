@@ -43,7 +43,7 @@ func NewComunicacionServiceClient(cc grpc.ClientConnInterface) ComunicacionServi
 
 func (c *comunicacionServiceClient) SendActNow(ctx context.Context, in *ActNow, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.ComunicacionService/SendActNow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.ComunicacionService/SendActNow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -52,7 +52,7 @@ func (c *comunicacionServiceClient) SendActNow(ctx context.Context, in *ActNow, 
 
 func (c *comunicacionServiceClient) SendPlayerAlive(ctx context.Context, in *PlayerAlive, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.ComunicacionService/SendPlayerAlive", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.ComunicacionService/SendPlayerAlive", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -61,7 +61,7 @@ func (c *comunicacionServiceClient) SendPlayerAlive(ctx context.Context, in *Pla
 
 func (c *comunicacionServiceClient) SendOptionMessage(ctx context.Context, in *OptionMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.ComunicacionService/SendOptionMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.ComunicacionService/SendOptionMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,7 +70,7 @@ func (c *comunicacionServiceClient) SendOptionMessage(ctx context.Context, in *O
 
 func (c *comunicacionServiceClient) SendLetterMessage(ctx context.Context, in *LetterMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.ComunicacionService/SendLetterMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.ComunicacionService/SendLetterMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -79,7 +79,7 @@ func (c *comunicacionServiceClient) SendLetterMessage(ctx context.Context, in *L
 
 func (c *comunicacionServiceClient) SendIntStringMessage(ctx context.Context, in *IntStringMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.ComunicacionService/SendIntStringMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.ComunicacionService/SendIntStringMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (c *comunicacionServiceClient) SendIntStringMessage(ctx context.Context, in
 
 func (c *comunicacionServiceClient) RequestMoney(ctx context.Context, in *MoneyRequest, opts ...grpc.CallOption) (*MoneyResponse, error) {
 	out := new(MoneyResponse)
-	err := c.cc.Invoke(ctx, "/comunicacion.ComunicacionService/RequestMoney", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.ComunicacionService/RequestMoney", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -155,7 +155,7 @@ func _ComunicacionService_SendActNow_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.ComunicacionService/SendActNow",
+		FullMethod: "/Comunicacion.ComunicacionService/SendActNow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComunicacionServiceServer).SendActNow(ctx, req.(*ActNow))
@@ -173,7 +173,7 @@ func _ComunicacionService_SendPlayerAlive_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.ComunicacionService/SendPlayerAlive",
+		FullMethod: "/Comunicacion.ComunicacionService/SendPlayerAlive",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComunicacionServiceServer).SendPlayerAlive(ctx, req.(*PlayerAlive))
@@ -191,7 +191,7 @@ func _ComunicacionService_SendOptionMessage_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.ComunicacionService/SendOptionMessage",
+		FullMethod: "/Comunicacion.ComunicacionService/SendOptionMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComunicacionServiceServer).SendOptionMessage(ctx, req.(*OptionMessage))
@@ -209,7 +209,7 @@ func _ComunicacionService_SendLetterMessage_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.ComunicacionService/SendLetterMessage",
+		FullMethod: "/Comunicacion.ComunicacionService/SendLetterMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComunicacionServiceServer).SendLetterMessage(ctx, req.(*LetterMessage))
@@ -227,7 +227,7 @@ func _ComunicacionService_SendIntStringMessage_Handler(srv interface{}, ctx cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.ComunicacionService/SendIntStringMessage",
+		FullMethod: "/Comunicacion.ComunicacionService/SendIntStringMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComunicacionServiceServer).SendIntStringMessage(ctx, req.(*IntStringMessage))
@@ -245,7 +245,7 @@ func _ComunicacionService_RequestMoney_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.ComunicacionService/RequestMoney",
+		FullMethod: "/Comunicacion.ComunicacionService/RequestMoney",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ComunicacionServiceServer).RequestMoney(ctx, req.(*MoneyRequest))
@@ -257,7 +257,7 @@ func _ComunicacionService_RequestMoney_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ComunicacionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "comunicacion.ComunicacionService",
+	ServiceName: "Comunicacion.ComunicacionService",
 	HandlerType: (*ComunicacionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
