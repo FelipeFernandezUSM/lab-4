@@ -45,7 +45,7 @@ func NewJugadorServiceClient(cc grpc.ClientConnInterface) JugadorServiceClient {
 
 func (c *jugadorServiceClient) SendActNow(ctx context.Context, in *ActNow, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/SendActNow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/SendActNow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -54,7 +54,7 @@ func (c *jugadorServiceClient) SendActNow(ctx context.Context, in *ActNow, opts 
 
 func (c *jugadorServiceClient) SendPlayerAlive(ctx context.Context, in *PlayerAlive, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/SendPlayerAlive", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/SendPlayerAlive", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -63,7 +63,7 @@ func (c *jugadorServiceClient) SendPlayerAlive(ctx context.Context, in *PlayerAl
 
 func (c *jugadorServiceClient) SendOptionMessage(ctx context.Context, in *OptionMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/SendOptionMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/SendOptionMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,7 +72,7 @@ func (c *jugadorServiceClient) SendOptionMessage(ctx context.Context, in *Option
 
 func (c *jugadorServiceClient) SendLetterMessage(ctx context.Context, in *LetterMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/SendLetterMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/SendLetterMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func (c *jugadorServiceClient) SendLetterMessage(ctx context.Context, in *Letter
 
 func (c *jugadorServiceClient) SendIntStringMessage(ctx context.Context, in *IntStringMessage, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/SendIntStringMessage", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/SendIntStringMessage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +90,7 @@ func (c *jugadorServiceClient) SendIntStringMessage(ctx context.Context, in *Int
 
 func (c *jugadorServiceClient) RequestMoney(ctx context.Context, in *MoneyRequest, opts ...grpc.CallOption) (*MoneyResponse, error) {
 	out := new(MoneyResponse)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/RequestMoney", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/RequestMoney", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +99,7 @@ func (c *jugadorServiceClient) RequestMoney(ctx context.Context, in *MoneyReques
 
 func (c *jugadorServiceClient) RequestMoneyFromDoshbank(ctx context.Context, in *MoneyRequestToDoshbank, opts ...grpc.CallOption) (*MoneyResponseFromDoshbank, error) {
 	out := new(MoneyResponseFromDoshbank)
-	err := c.cc.Invoke(ctx, "/comunicacion.JugadorService/RequestMoneyFromDoshbank", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.JugadorService/RequestMoneyFromDoshbank", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -171,7 +171,7 @@ func _JugadorService_SendActNow_Handler(srv interface{}, ctx context.Context, de
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/SendActNow",
+		FullMethod: "/Comunicacion.JugadorService/SendActNow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).SendActNow(ctx, req.(*ActNow))
@@ -189,7 +189,7 @@ func _JugadorService_SendPlayerAlive_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/SendPlayerAlive",
+		FullMethod: "/Comunicacion.JugadorService/SendPlayerAlive",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).SendPlayerAlive(ctx, req.(*PlayerAlive))
@@ -207,7 +207,7 @@ func _JugadorService_SendOptionMessage_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/SendOptionMessage",
+		FullMethod: "/Comunicacion.JugadorService/SendOptionMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).SendOptionMessage(ctx, req.(*OptionMessage))
@@ -225,7 +225,7 @@ func _JugadorService_SendLetterMessage_Handler(srv interface{}, ctx context.Cont
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/SendLetterMessage",
+		FullMethod: "/Comunicacion.JugadorService/SendLetterMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).SendLetterMessage(ctx, req.(*LetterMessage))
@@ -243,7 +243,7 @@ func _JugadorService_SendIntStringMessage_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/SendIntStringMessage",
+		FullMethod: "/Comunicacion.JugadorService/SendIntStringMessage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).SendIntStringMessage(ctx, req.(*IntStringMessage))
@@ -261,7 +261,7 @@ func _JugadorService_RequestMoney_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/RequestMoney",
+		FullMethod: "/Comunicacion.JugadorService/RequestMoney",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).RequestMoney(ctx, req.(*MoneyRequest))
@@ -279,7 +279,7 @@ func _JugadorService_RequestMoneyFromDoshbank_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.JugadorService/RequestMoneyFromDoshbank",
+		FullMethod: "/Comunicacion.JugadorService/RequestMoneyFromDoshbank",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JugadorServiceServer).RequestMoneyFromDoshbank(ctx, req.(*MoneyRequestToDoshbank))
@@ -291,7 +291,7 @@ func _JugadorService_RequestMoneyFromDoshbank_Handler(srv interface{}, ctx conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var JugadorService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "comunicacion.JugadorService",
+	ServiceName: "Comunicacion.JugadorService",
 	HandlerType: (*JugadorServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -345,7 +345,7 @@ func NewDoshbankServiceClient(cc grpc.ClientConnInterface) DoshbankServiceClient
 
 func (c *doshbankServiceClient) RequestMoney(ctx context.Context, in *MoneyRequestToDoshbank, opts ...grpc.CallOption) (*MoneyResponseFromDoshbank, error) {
 	out := new(MoneyResponseFromDoshbank)
-	err := c.cc.Invoke(ctx, "/comunicacion.DoshbankService/RequestMoney", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Comunicacion.DoshbankService/RequestMoney", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -391,7 +391,7 @@ func _DoshbankService_RequestMoney_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/comunicacion.DoshbankService/RequestMoney",
+		FullMethod: "/Comunicacion.DoshbankService/RequestMoney",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DoshbankServiceServer).RequestMoney(ctx, req.(*MoneyRequestToDoshbank))
@@ -403,7 +403,7 @@ func _DoshbankService_RequestMoney_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DoshbankService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "comunicacion.DoshbankService",
+	ServiceName: "Comunicacion.DoshbankService",
 	HandlerType: (*DoshbankServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
