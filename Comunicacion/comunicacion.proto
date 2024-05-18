@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package comunicacion;
 
-option go_package = "github.com/your_username/your_project/comunicacion";
+option go_package = ".";
 
 import "google/protobuf/empty.proto";
 
