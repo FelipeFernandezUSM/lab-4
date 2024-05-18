@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package Comunicacion;
+package comunicacion;
 
 option go_package = ".";
 
